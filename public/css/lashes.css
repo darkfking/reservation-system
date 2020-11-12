@@ -1,0 +1,30 @@
+.dark-colors {
+    background-color: #222831 !important;
+    color: white;
+    border: none !important;
+  }
+
+  body {
+    background-color: #393e46 !important;
+    color: white;
+  }
+
+  .card {
+    background-color: #222831;
+  }
+
+  .btn-primary {
+    background-color: #00adb5 !important;
+    border: #00adb5 !important;
+  }
+
+  .btn-ind {
+    height: 110px !important;
+  }
+
+  .btn-white {
+    background-color: white !important;
+    color: black !important;
+    width: 130px !important;
+    box-shadow: none !important;
+  }
