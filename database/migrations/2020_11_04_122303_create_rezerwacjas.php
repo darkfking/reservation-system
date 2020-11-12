@@ -15,7 +15,7 @@ class CreateRezerwacjas extends Migration
     {
         Schema::create('rezerwacjas', function (Blueprint $table) {
             $table->id();
-            $table->string('date');
+            $table->string('datepicker');
             $table->string('time');
             $table->string('info');
             $table->string('status');
