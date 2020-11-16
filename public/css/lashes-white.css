@@ -4,3 +4,7 @@
     width: 130px !important;
     box-shadow: none !important;
 }
+
+.table {
+    border-radius: 10px !important;
+  }

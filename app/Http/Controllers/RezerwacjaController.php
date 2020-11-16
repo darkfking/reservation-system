@@ -62,4 +62,10 @@ class RezerwacjaController extends Controller
         $item->delete();
         return redirect()->route('rezerwacje/create');
     }
+
+    public function archive()
+    {
+        $arch = Rezerwacja::paginate(20);
+        return view('rezerwacje/archiwum', compact('arch'));
+    }
 }

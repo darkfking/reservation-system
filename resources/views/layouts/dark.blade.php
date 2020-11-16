@@ -27,7 +27,7 @@
       <div class="list-group list-group-flush">
         <a href="{{route('rezerwacje')}}" class="list-group-item list-group-item-action dark-colors">Panel</a>
         <a href="{{route('rezerwacje/create')}}" class="list-group-item list-group-item-action dark-colors">Rezerwacje</a>
-        <a href="#" class="list-group-item list-group-item-action dark-colors">Archiwum</a>
+        <a href="{{route('rezerwacje/archiwum')}}" class="list-group-item list-group-item-action dark-colors">Archiwum</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

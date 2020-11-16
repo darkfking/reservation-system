@@ -34,3 +34,5 @@ Route::post('rezerwacje/store', [App\Http\Controllers\RezerwacjaController::clas
 Route::delete('rezerwacje/{item}', [App\Http\Controllers\RezerwacjaController::class, 'destroy'])->name('rezerwacje/delete');
 
 Route::get('rezerwacje/accept/{item}', [App\Http\Controllers\RezerwacjaController::class, 'accept'])->name('rezerwacje/accept');
+
+Route::get('rezerwacje/archiwum', [App\Http\Controllers\RezerwacjaController::class, 'archive'])->name('rezerwacje/archiwum');
