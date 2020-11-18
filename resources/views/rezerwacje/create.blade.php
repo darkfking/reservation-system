@@ -29,6 +29,7 @@
     <table class="table  table-striped table-reponsive table-borderless dark-colors shadow">
       <thead>
         <tr>
+          <th scope="col">Numer</th>
           <th scope="col">Data</th>
           <th scope="col">Godzina</th>
           <th scope="col">Informacja</th>
@@ -39,6 +40,7 @@
       <tbody>
         @foreach ($all as $item)
         <tr>
+          <th>{{$item->id}}</th>
           <th scope="row">
           <?php 
           $m2 = explode("/",  $item->datepicker);
@@ -48,6 +50,7 @@
           $pl_month = str_replace($months_en, $months_pl, $mname);
           echo $m2[0].' '.$pl_month;
           ?>
+          <hr>
           </th>
           <td>{{$item->time}}</td>
           <td>{{$item->info}}</td>
@@ -63,10 +66,10 @@
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               {!! Form::model($item, ['route' => ['rezerwacje/delete', $item], 'method' => 'DELETE']) !!}
-                <button class="btn btn-danger d-inline">Usuń</button>
+                <button class="btn btn-danger btn-wid">Usuń</button>
               {!! Form::close() !!}
-              <button class="btn btn-primary">Edytuj</button>
-              <a href="{{ route('rezerwacje/accept', $item) }}" class="btn btn-success">Wykonano</a>
+              <a href="{{ route('rezerwacje/edit', $item) }}" class="btn btn-primary btn-wid">Edytuj</a>
+              <a href="{{ route('rezerwacje/accept', $item) }}" class="btn btn-success btn-wid">Wykonano</a>
             </div>
           </td>
         </tr>

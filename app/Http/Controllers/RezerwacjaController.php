@@ -68,4 +68,15 @@ class RezerwacjaController extends Controller
         $arch = Rezerwacja::paginate(20);
         return view('rezerwacje/archiwum', compact('arch'));
     }
+
+    public function edit(Rezerwacja $item) 
+    {
+        return view('rezerwacje/edit', compact('item'));
+    }
+
+    public function update(Request $request, Rezerwacja $item)
+    {
+        $item->update($request->all());
+        return redirect()->route('rezerwacje/create');
+    }
 }

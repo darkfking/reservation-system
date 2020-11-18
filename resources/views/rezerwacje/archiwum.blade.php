@@ -8,6 +8,7 @@
             <th scope="col">Data</th>
             <th scope="col">Godzina</th>
             <th scope="col">Informacja</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +26,18 @@
             </th>
             <td>{{$item->time}}</td>
             <td>{{$item->info}}</td>
+            <td>
+              <?php
+              if($item->status == '0') { ?>
+                <button class="btn btn-danger disabled">Oczekująca</button>
+                <?php
+              } elseif ($item->status == '1') {
+                ?>
+                <button class="btn btn-success disabled">Wykonane</button>
+                <?php
+              } 
+              ?>
+            </td>
           </tr>
           @endforeach
         </tbody>

@@ -21,9 +21,13 @@
           <h3 class="card-header">Wizyty dziś</h3>
           <div class="card-body">
             <ul class="list-group ">
-              @foreach ($all_tod as $tod)            
+              @foreach ($all_tod as $tod)   
                 <li class="list-group-item list-group-item-dark shadow" style="background-color: #2E333F; color: white;"><b>{{$tod->time}}</b> {{ $tod->info }}</li>   
               @endforeach
+              <?php if ($sum_tod == 0) {
+                echo 'Brak rezerwacji dzisiaj!';
+              }         
+              ?>
             </ul>
           </div>
         </div>
@@ -34,8 +38,12 @@
           <div class="card-body">
             <ul class="list-group ">
               @foreach ($all_tom as $tod)            
-                <li class="list-group-item list-group-item-dark"><b>{{$tod->time}}</b> {{ $tod->info }}</li>   
+                <li class="list-group-item list-group-item-dark shadow" style="background-color: #2E333F; color: white;"><b>{{$tod->time}}</b> {{ $tod->info }}</li>   
               @endforeach
+              <?php if ($sum_tom == 0) {
+                echo 'Brak rezerwacji jutro!';
+              }         
+              ?>
             </ul>
           </div>
         </div>

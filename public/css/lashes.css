@@ -32,3 +32,11 @@
   .table {
     border-radius: 10px !important;
   }
+
+  .btn-wid {
+    width: 100px !important;
+  }
+
+  hr {
+    background-color: white !important;
+  }
