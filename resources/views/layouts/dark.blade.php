@@ -16,6 +16,8 @@
 
   <link rel="stylesheet" href="{{ asset('css/simple.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('css/lashes.css') }}" type="text/css" id="theme-link">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 
 <body>
@@ -28,6 +30,9 @@
         <a href="{{route('rezerwacje')}}" class="list-group-item list-group-item-action dark-colors">Panel</a>
         <a href="{{route('rezerwacje/create')}}" class="list-group-item list-group-item-action dark-colors">Rezerwacje</a>
         <a href="{{route('rezerwacje/archiwum')}}" class="list-group-item list-group-item-action dark-colors">Archiwum</a>
+        <a href="" class="list-group-item list-group-item-action dark-colors">Notatki</a>
+        <a href="" class="list-group-item list-group-item-action dark-colors">Sklepy</a>
+        <a href="{{route('posty')}}" class="list-group-item list-group-item-action dark-colors">Moje prace</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

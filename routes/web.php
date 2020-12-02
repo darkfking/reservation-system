@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
@@ -40,3 +44,11 @@ Route::get('rezerwacje/archiwum', [App\Http\Controllers\RezerwacjaController::cl
 Route::get('rezerwacje/edit/{item}', [App\Http\Controllers\RezerwacjaController::class, 'edit'])->name('rezerwacje/edit');
 
 Route::put('rezerwacje/update/{item}', [App\Http\Controllers\RezerwacjaController::class, 'update'])->name('rezerwacje/update');
+
+Route::get('posty', [App\Http\Controllers\PostsController::class, 'index'])->name('posty');
+
+Route::post('posty/store',  [App\Http\Controllers\PostsController::class, 'store'])->name('posty/store');
+
+Route::get('psoty/public/{item}', [App\Http\Controllers\PostsController::class, 'public'])->name('posty/public');
+
+Route::delete('posty/{item}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('posty/delete');

@@ -1,0 +1,11 @@
+body {
+    background: url("https://images.unsplash.com/photo-1495707800306-e240c5a0d65f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1490&q=80");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main-header {
+
+}

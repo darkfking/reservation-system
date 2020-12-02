@@ -35,7 +35,7 @@ class RezerwacjaController extends Controller
         }
 
         $data = array($sum_accept, $sum_wait);
-        return view('rezerwacje/index')->with(compact('all_tom', 'all_tod', 'sum_tod', 'sum_tom', 'data', 'hours'));
+        return view('rezerwacje/index')->with(compact('all_tom', 'all_tod', 'sum_tod', 'sum_tom', 'data', 'hours'));        
     }
 
     public function create() 

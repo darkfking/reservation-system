@@ -32,7 +32,7 @@
         
 <div class="row justify-content-center mt-1">
   <div class="col-12">
-    <table class="table table-striped table-responsive table-borderless dark-colors shadow">
+    <table class="table  table-striped table-reponsive table-borderless dark-colors shadow">
       <thead>
         <tr>
           <th scope="col">Numer</th>
@@ -80,7 +80,6 @@
           </td>
         </tr>
         @endforeach
-        
       </tbody>
     </table>
   </div>
@@ -97,8 +96,7 @@ $(document).ready(function() {
       data: $('#addform').serialize(),
       success: function (response) {
         console.log(response)
-        $('#alert').show().addClass("animate__animated animate__backInDown")
-        $('.table tr:first').after('<tr><td>'+response.time+'</td></tr>');
+        $('#alert').show().addClass("animate__animated animate__backInDown");
       },
       error: function (error) {
         console.log(error)
@@ -107,7 +105,26 @@ $(document).ready(function() {
     });
   });
 
+  $(".delbtn").click(function(){
+        var id = $('#delb').data("id");
+        var token = $(this).data("token");
+        $.ajax(
+        {
+            url: "rezerwacje/delete/"+id,
+            type: 'PUT',
+            data: {
+                "id": id,
+                "_method": 'DELETE',
+                "_token": token,
+            },
+            success: function ()
+            {
+                console.log("it Work");
+            }
+        });
 
+        console.log("It failed");
+    });
 });
 </script>
 @endsection
