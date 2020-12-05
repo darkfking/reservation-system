@@ -40,7 +40,8 @@
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">KamiLashes</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Najlepsze, najtrwalsze, najdłuższe, po prostu KamiLashes!</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="#about">POZNAJ MNIE</a>
+                    <a class="btn btn-primary js-scroll-trigger" href="#signup">UMÓW WIZYTĘ</a>
                 </div>
             </div>
         </header>
@@ -103,6 +104,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row justify-content-center no-gutters mt-5">
+                    <div class="col-6">
+                        <a href="{{route('prace')}}" class="btn btn-primary btn-block">Zobacz wszystkie moje prace</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -111,7 +118,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 mx-auto text-center">
                         <h2 class="mb-4 mt-4">Cennik</h2>
-                        <table class="table table-dark shadow mt-4 mb-4">
+                        <hr>
+                        <table class="table table-borderless mt-4 mb-4">
                             <thead>
                               <tr>
                                 <th scope="col">Rodzaj</th>
@@ -158,11 +166,8 @@
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                        <form class="form-inline d-flex">
-                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
-                        </form>
+                        <h2 class="text-white mb-5">Zapraszam do kontaktu</h2>
+                        <h1 class="text-white">554 423 292</h1>
                     </div>
                 </div>
             </div>

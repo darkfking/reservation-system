@@ -1,8 +1,8 @@
 @extends('layouts.dark')
 
 @section('content')
-<h1 class="d-inline">Moje prace</h1> <button class="d-inline float-right btn btn-success mt-2" data-toggle="modal" data-target="#exampleModalCenter">Dodaj nową pracę</button>
-
+<h1 class="d-inline">Moje prace</h1>  <button class="d-inline float-right btn btn-success mt-2" data-toggle="modal" data-target="#exampleModalCenter">Dodaj nową pracę</button>
+<br><a href="{{route('prace')}}" class="align-middle">Podgląd na stronie</a>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content dark-colors">
@@ -43,19 +43,20 @@
     <div class="col-6 mb-4">
         <div class="card">
             <div class="card-body">
-                <img src="https://images.unsplash.com/photo-1492618269284-653dce58fd6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80" width="300px" height="200px" class="img-fluid rounded float-left" alt="">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  {!! Form::model($item, ['route' => ['posty/delete', $item], 'method' => 'DELETE']) !!}
-                  <button class="btn btn-danger btn-wid">Usuń</button>
-                  {!! Form::close() !!}
-                  <?php 
-                  if($item->status == "1") {
-                    echo "<button class='btn btn-success disabled'>Opublikowano</button>";
-                  } else {
-                    ?> <a href="{{ route('posty/public', $item) }}" class="btn btn-success btn-wid">Opublikuj</a> <?php
-                  }
-                  ?>
-                </div>
+              <div class="btn-group mb-3" role="group" aria-label="Basic example">
+                {!! Form::model($item, ['route' => ['posty/delete', $item], 'method' => 'DELETE']) !!}
+                <button class="btn btn-danger btn-wid">Usuń</button>
+                {!! Form::close() !!}
+                <?php 
+                if($item->status == "1") {
+                  echo "<button class='btn btn-success disabled'>Opublikowano</button>";
+                } else {
+                  ?> <a href="{{ route('posty/public', $item) }}" class="btn btn-success btn-wid">Opublikuj</a> <?php
+                }
+                ?>
+              </div>
+              <img src="{{url('uploads/'.$item->filename)}}" class="rounded img-fluid card-img-top">
+                
                 
                 
                 <h3 class="mb-5">{{$item->title}}</h3>

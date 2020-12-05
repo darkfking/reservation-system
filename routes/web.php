@@ -52,3 +52,5 @@ Route::post('posty/store',  [App\Http\Controllers\PostsController::class, 'store
 Route::get('psoty/public/{item}', [App\Http\Controllers\PostsController::class, 'public'])->name('posty/public');
 
 Route::delete('posty/{item}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('posty/delete');
+
+Route::get('prace', [App\Http\Controllers\PostsController::class, 'works'])->name('prace');

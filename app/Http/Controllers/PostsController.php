@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PostsController extends Controller
 {
@@ -14,9 +17,22 @@ class PostsController extends Controller
     }
     public function store(Request $request)
     {
-        Post::create($request->all());
+        $cover = $request->file('bookcover');
+        $extension = $cover->getClientOriginalExtension();
+        Storage::disk('public')->put($cover->getFilename().'.'.$extension,  File::get($cover));
+        $destinationPath = 'uploads';
+        $cover->move($destinationPath,$cover->getFilename().'.'.$extension);
+        $post = new Post();
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->status = $request->status;
+        $post->mime = $cover->getClientMimeType();
+        $post->original_filename = $cover->getClientOriginalName();
+        $post->filename = $cover->getFilename().'.'.$extension;
+        $post->save();
+
         return redirect()->route('posty');
-    }
+    }      
 
     public function public(Post $item)
     {
@@ -29,5 +45,11 @@ class PostsController extends Controller
     {
         $item->delete();
         return redirect()->route('posty');
+    }
+
+    public function works()
+    {
+        $posts = Post::where('status', '1')->get();
+        return view('posty/prace', compact('posts'));
     }
 }
