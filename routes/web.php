@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
+})->name('welcome');
 Auth::routes();
 
 Route::get('/index', function () {
@@ -49,8 +48,12 @@ Route::get('posty', [App\Http\Controllers\PostsController::class, 'index'])->nam
 
 Route::post('posty/store',  [App\Http\Controllers\PostsController::class, 'store'])->name('posty/store');
 
-Route::get('psoty/public/{item}', [App\Http\Controllers\PostsController::class, 'public'])->name('posty/public');
+Route::get('posty/public/{item}', [App\Http\Controllers\PostsController::class, 'public'])->name('posty/public');
 
 Route::delete('posty/{item}', [App\Http\Controllers\PostsController::class, 'destroy'])->name('posty/delete');
 
-Route::get('prace', [App\Http\Controllers\PostsController::class, 'works'])->name('prace');
+Route::get('prace', [App\Http\Controllers\ShowController::class, 'works'])->name('prace');
+
+Route::post('mail/store', [App\Http\Controllers\ShowController::class, 'store'])->name('mail/store');
+
+Route::get('mail/index', [App\Http\Controllers\MailController::class, 'index'])->name('mail/index');

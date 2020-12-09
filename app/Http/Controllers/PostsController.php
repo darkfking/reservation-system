@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\File;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() 
     {
         $all = Post::all();
@@ -45,11 +50,5 @@ class PostsController extends Controller
     {
         $item->delete();
         return redirect()->route('posty');
-    }
-
-    public function works()
-    {
-        $posts = Post::where('status', '1')->get();
-        return view('posty/prace', compact('posts'));
     }
 }

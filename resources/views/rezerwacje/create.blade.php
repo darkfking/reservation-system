@@ -32,7 +32,7 @@
         
 <div class="row justify-content-center mt-1">
   <div class="col-12">
-    <table class="table table-striped table-responsive table-borderless dark-colors shadow">
+    <table class="table table-striped table-borderless dark-colors shadow">
       <thead>
         <tr>
           <th scope="col">Numer</th>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>KamiLashes</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -166,8 +166,15 @@
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Zapraszam do kontaktu</h2>
+                        <h2 class="text-white mb-5">Zapisz się zaby otrzymać informację o rabatach i promocjach!</h2>
                         <h1 class="text-white">554 423 292</h1>
+                        {!! Form::open(['route' => 'mail/store']) !!}
+                        <form class="form-inline d-flex">
+                            {!! Form::email('email', null, ['class'=>'form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0', 'placeholder'=>'Wprowadź swój e-mail...']) !!}
+                            {!! Form::submit('Zapisz się', ['class'=>'btn btn-primary mx-auto mt-1']) !!} 
+                            {!! Form::hidden('status', '0') !!}
+                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
