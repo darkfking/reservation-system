@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Rezerwacja;
 use DateTime;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ReservationMail;
 
 class RezerwacjaController extends Controller
 {
@@ -54,6 +56,7 @@ class RezerwacjaController extends Controller
     public function store(Request $request) 
     {
         Rezerwacja::create($request->all());
+        Mail::to('kubaj26@gmail.com')->send(new ReservationMail());
         return redirect()->route('rezerwacje/create');
     }
 

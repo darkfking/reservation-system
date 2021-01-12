@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\WelcomeMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,12 @@ Auth::routes();
 
 Route::get('/index', function () {
     return view('index');
+});
+
+Route::get('/email', function () {
+    Mail::to('emial@email.com')->send(new WelcomeMail());
+
+    return new WelcomeMail();
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
